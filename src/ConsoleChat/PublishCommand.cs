@@ -12,7 +12,7 @@ public sealed class PublishCommand : AsyncCommand<Settings>
         while (true)
         {
             var text = AnsiConsole.Ask<string>($"[{input.Color}]{input.Name }: [/]");
-            var result  = await channel.PublishAsync("chat", text);
+            var result  = await channel.PublishAsync("greeting", text);
             if (result.IsFailure)
             {
                 AnsiConsole.MarkupLine($"[red]{result.Error.Message}[/]");
