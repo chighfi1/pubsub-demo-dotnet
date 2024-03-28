@@ -1,7 +1,4 @@
 # Pub/Sub Demo using .NET 6
-
-![Console chat demo with two publishers and two subscribers](media/console_chat.gif)
-
 ## Description
 
 This is a .NET 6 console application that demonstrates how [Ably](https://ably.com) can be used for pub/sub messaging. You can read all about this demo in this [blog post](https://ably.com/blog/use-pub-sub-to-build-a-chat-app-with-csharp-net).
@@ -19,55 +16,24 @@ The project uses the following components:
 ### Prerequisites
 
 1. Install the [.NET 6 SDK](https://dotnet.microsoft.com/download/dotnet/6.0) .
-2. [Sign up](https://ably.com/signup?utm_campaign=GLB-2203-pubsub-demo-dotnet&utm_content=repo-pubsub-demo-dotnet&utm_source=github&utm_medium=repo&src=GLB-2203-pubsub-demo-dotnet-github) or [log in](https://ably.com/login?utm_campaign=GLB-2203-pubsub-demo-dotnet&utm_content=repo-pubsub-demo-dotnet&utm_source=github&utm_medium=repo&src=GLB-2203-pubsub-demo-dotnet-github) to ably.com, and [create a new app and copy the API key](https://faqs.ably.com/setting-up-and-managing-api-keys?utm_campaign=GLB-2203-pubsub-demo-dotnet&utm_content=repo-pubsub-demo-dotnet&utm_source=github&utm_medium=repo&src=GLB-2203-pubsub-demo-dotnet-github).
-3. Clone this repository to your local machine.
+
 
 ### Building & running the project
 
 1. Build the console app by running `dotnet build` in the `src\ConsoleChat` folder.
    > The executable is located in the `src\ConsoleChat\bin\Debug\net6.0` folder.
-2. Start one instance of the application in the publisher mode:
+
+2. Run the [`dotnet publish`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish) command:
+
+    ```shell
+    dotnet publish
+    ```
+
+
+Start one instance of the application in the publisher mode by going to the directory where the aforomentioned executable is located:
 
     ```powershell
     .\ConsoleChat.exe pub blobtastic <AblyApiKey>
     ```
 
     > Ably will create a new channel if it doesn't yet exist.
-
-
-### Publishing the application
-
-In case you want to publish and distribute this console app to use this with your co-workers or friends, you need to do the following:
-
-1. Ensure you're in the folder where the *csproj* file is located.
-2. Run the [`dotnet publish`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish) command:
-
-    ```shell
-    dotnet publish -c Release -r <RUNTIME_IDENTFIER> --self-contained=false /p:PublishSingleFile=true
-    ```
-
-    Example for windows x64 machines:
-
-    ```shell
-    dotnet publish -c Release -r win-x64 --self-contained=false /p:PublishSingleFile=true
-    ```
-
-    For more information on the available runtime identifiers, see the [.NET RID Catalog](https://docs.microsoft.com/dotnet/core/rid-catalog).
-
-3. The release version of the application is now available in the `src\ConsoleChat\bin\Release\net6.0\<RUNTIME_IDENTIFIER>\publish` folder.
-
-## Contributing
-
-Want to help contributing to this project? Have a look at our [contributing guide](CONTRIBUTING.md)!
-
-## More info
-
-You want more information about this sample or using .NET & Ably in general? Feel free to contact me via [Discord](https://go.ably.com/discord).
-
-- [Join our Discord server](https://go.ably.com/discord)
-- [Follow us on Twitter](https://twitter.com/ablyrealtime)
-- [Use our SDKs](https://github.com/ably/)
-- [Visit our website](https://ably.com?utm_campaign=GLB-2203-pubsub-demo-dotnet&utm_content=repo-pubsub-demo-dotnet&utm_source=github&utm_medium=repo&src=GLB-2203-pubsub-demo-dotnet-github)
-
----
-[![Ably logo](https://static.ably.dev/badge-black.svg?pubsub-demo-dotnet)](https://ably.com?utm_campaign=GLB-2203-pubsub-demo-dotnet&utm_content=repo-pubsub-demo-dotnet&utm_source=github&utm_medium=repo&src=GLB-2203-pubsub-demo-dotnet-github)
