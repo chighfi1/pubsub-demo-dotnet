@@ -29,22 +29,11 @@ The project uses the following components:
 2. Start one instance of the application in the publisher mode:
 
     ```powershell
-    .\ConsoleChat.exe pub <ChannelName> <AblyApiKey>
+    .\ConsoleChat.exe pub blobtastic <AblyApiKey>
     ```
 
     > Ably will create a new channel if it doesn't yet exist.
 
-3. Start one instance of the application in the subscriber mode:
-
-    ```powershell
-    .\ConsoleChat.exe sub <ChannelName> <AblyApiKey>
-    ```
-
-    > Use the same channel & API key as in step 2.
-
-Alternatively, you can start the application in Debug mode in VSCode by pressing `F5`. The `launch.json` contains input arguments and this instructs VSCode to show input fields when the application is run in debug mode:
-
-![Input fields when debugging in VSCode](media/%20console_chat_vscode_debug.gif)
 
 ### Publishing the application
 
