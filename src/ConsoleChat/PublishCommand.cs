@@ -4,7 +4,7 @@ public sealed class PublishCommand : AsyncCommand<Settings>
     {
         (string Name, string Color) input = DrawConsoleAndGetInput(settings);
 
-        var clientOptions = new ClientOptions(settings.AblyApiKey) { ClientId = input.Name };
+        var clientOptions = new ClientOptions(settings.AblyApiKey);
         var ably = new AblyRealtime(clientOptions);
         var channel = ably.Channels.Get(settings.Channel);
         channel.Presence.Enter(input.Color);
